@@ -2,6 +2,7 @@ package com.example.ejemplosqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,5 +37,9 @@ public class MainActivity extends AppCompatActivity {
         String nom = nombre.getText().toString();
         String car = carrera.getText().toString();
         insertar(numCuen,nom,car);
+    }
+    public void ingresarMostrar(View view)
+    {
+
     }
 }
