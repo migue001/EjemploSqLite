@@ -7,6 +7,8 @@ import android.os.Build;
 
 import androidx.annotation.Nullable;
 
+import java.util.List;
+
 public class DeveloperBD extends SQLiteOpenHelper {
 
     private static final String NOMBRE_BD = "alumnos.bd";
@@ -39,4 +41,6 @@ public class DeveloperBD extends SQLiteOpenHelper {
             bd.close();
         }
     }
+
+
 }
