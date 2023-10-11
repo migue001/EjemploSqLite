@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ingresarMostrar(View view)
     {
-
+        Intent ingresar = new Intent(this, Consulta.class);
+        startActivity(ingresar);
     }
 }
