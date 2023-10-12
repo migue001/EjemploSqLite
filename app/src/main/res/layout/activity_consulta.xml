@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Consulta">
+    tools:context=".Consulta"
+    android:background="@color/white"
+    >
     <androidx.appcompat.widget.Toolbar
         android:background="#1ABC9C"
         android:layout_width="match_parent"

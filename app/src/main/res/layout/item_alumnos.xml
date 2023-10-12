@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        app:cardElevation="20dp"
+        app:cardElevation="10dp"
         app:cardCornerRadius="20dp"
         >
         <LinearLayout
@@ -30,6 +30,7 @@
             </LinearLayout>
             <LinearLayout
                 android:padding="10dp"
+                android:gravity="center"
                 android:orientation="vertical"
                 android:layout_weight="0.5"
                 android:layout_width="match_parent"
@@ -39,23 +40,30 @@
                     android:layout_height="wrap_content"
                     android:text="Nombre"
                     android:id="@+id/nombreI"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Nombre"
                     android:id="@+id/numCuenta"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Carrera"
                     android:id="@+id/carreraI"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <View
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="2dp">
+
+    </View>
 </LinearLayout>

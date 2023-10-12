@@ -18,14 +18,15 @@ public class Consulta extends AppCompatActivity {
         setContentView(R.layout.activity_consulta);
         recyclerViewAlumno = findViewById(R.id.recyclerAlumnos);
         recyclerViewAlumno.setLayoutManager(new LinearLayoutManager(this));
-        alumnoAdaptador = new AlumnoAdaptador(obtenerAlumnos());
+        DeveloperBD developerBD = new DeveloperBD(getApplicationContext());
+        alumnoAdaptador = new AlumnoAdaptador(developerBD.mostrarAlumnos());
         recyclerViewAlumno.setAdapter(alumnoAdaptador);
     }
 
-    private List<AlumnoModelo> obtenerAlumnos() {
+    /*private List<AlumnoModelo> obtenerAlumnos() {
         List<AlumnoModelo> alumno = new ArrayList<>();
         alumno.add(new AlumnoModelo("1970556","Jesus","ING. Software"));
         alumno.add(new AlumnoModelo("1970556","Jesus","ING. Software"));
         return alumno;
-    }
+    }*/
 }
