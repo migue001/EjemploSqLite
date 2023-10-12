@@ -1,12 +1,14 @@
 package com.example.ejemplosqlite;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeveloperBD extends SQLiteOpenHelper {
@@ -40,6 +42,20 @@ public class DeveloperBD extends SQLiteOpenHelper {
             bd.execSQL("INSERT INTO ALUMNOS VALUES('"+numCuenta+"', '"+nombre+"','"+carrera+"')");
             bd.close();
         }
+    }
+
+    public List<AlumnoModelo> mostrarAlumnos()
+    {
+        SQLiteDatabase bd = getReadableDatabase();
+        Cursor cursor = bd.rawQuery("SELECT * FROM ALUMNOS",null);
+        List<AlumnoModelo> alumnoM = new ArrayList<>();
+        if(cursor.moveToFirst())
+        {
+            do {
+                alumnoM.add(new AlumnoModelo(cursor.getString(0),cursor.getString(1), cursor.getString(2)));
+            }while(cursor.moveToNext());
+        }
+        return alumnoM;
     }
 
 

@@ -12,6 +12,8 @@ public class AlumnoModelo {
 
     }
 
+
+
     public String getNumCuenta() {
         return numCuenta;
     }
