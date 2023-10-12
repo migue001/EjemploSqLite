@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText numCuenta, nombre,carrera;
-
+    ImageButton buscar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,19 @@ public class MainActivity extends AppCompatActivity {
          numCuenta = findViewById(R.id.numeroCuenta);
          nombre = findViewById(R.id.nombre);
          carrera = findViewById(R.id.carrera);
+        buscar = findViewById(R.id.botonBuscar);
 
+        buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlumnoModelo alumno = new AlumnoModelo();
+                final DeveloperBD developerBD = new DeveloperBD(getApplicationContext());
+                developerBD.buscarAlumnos(alumno, numCuenta.getText().toString());
+                nombre.setText(alumno.getNombre());
+                carrera.setText(alumno.getCarrera());
+
+            }
+        });
 
 
     }

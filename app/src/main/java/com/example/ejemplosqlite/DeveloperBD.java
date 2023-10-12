@@ -58,5 +58,20 @@ public class DeveloperBD extends SQLiteOpenHelper {
         return alumnoM;
     }
 
+    public void buscarAlumnos(AlumnoModelo alumnoModelo, String codigo)
+    {
+        SQLiteDatabase bd = getReadableDatabase();
+        Cursor cursor = bd.rawQuery("SELECT * FROM ALUMNOS WHERE NUM ='"+codigo+"'",null);
+
+        if(cursor.moveToFirst())
+        {
+            do {
+                alumnoModelo.setNombre(cursor.getString(1));
+                alumnoModelo.setCarrera(cursor.getString(2));
+            }while(cursor.moveToNext());
+        }
+
+    }
+
 
 }

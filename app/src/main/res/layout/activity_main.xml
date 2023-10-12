@@ -43,12 +43,35 @@
             android:text="No. Cuenta:"
             android:textSize="20dp"
             />
-        <EditText
-            android:id="@+id/numeroCuenta"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            >
+            <EditText
+                android:id="@+id/numeroCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
 
-            />
+                />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.7"
+                app:cardCornerRadius="23dp"
+                >
+                <ImageButton
+                    android:background="#1ABC9C"
+                    android:layout_weight="1.7"
+                    android:id="@+id/botonBuscar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_search_24"
+                    />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
         <TextView
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
