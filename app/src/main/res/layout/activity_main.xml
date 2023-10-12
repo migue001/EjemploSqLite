@@ -118,15 +118,19 @@
             android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="Modificar"
+            android:id="@+id/btnmodificar"
             />
-        <Button
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:backgroundTint="#1ABC9C"
-            />
+       <Button
+           android:layout_marginTop="15dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Eliminar"
+           android:backgroundTint="#E74C3C"
+           android:id="@+id/btneliminar"
+
+           />
+
 
 
     </LinearLayout>

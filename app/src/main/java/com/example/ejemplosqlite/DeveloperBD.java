@@ -73,5 +73,24 @@ public class DeveloperBD extends SQLiteOpenHelper {
 
     }
 
+    public void editarCursos(String numCuenta, String nombre, String carrera)
+    {
+        SQLiteDatabase bd = getWritableDatabase();
+        if(bd!=null)
+        {
+            bd.execSQL("UPDATE ALUMNOS SET CARRERA='"+carrera+"',NOMBRE='"+nombre+"'");
+            bd.close();
+        }
+    }
+    public void eliminarCursos(String numCuenta)
+    {
+        SQLiteDatabase bd = getWritableDatabase();
+        if(bd!= null)
+        {
+            bd.execSQL("DELETE FROM ALUMNOS WHERE NUM='"+numCuenta+"'");
+            bd.close();
+        }
+    }
+
 
 }

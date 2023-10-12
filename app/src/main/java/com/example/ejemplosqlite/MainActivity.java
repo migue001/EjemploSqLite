@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText numCuenta, nombre,carrera;
     ImageButton buscar;
+    Button eliminar, editar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
          nombre = findViewById(R.id.nombre);
          carrera = findViewById(R.id.carrera);
         buscar = findViewById(R.id.botonBuscar);
+        eliminar = findViewById(R.id.btneliminar);
+        editar = findViewById(R.id.btnmodificar);
 
         buscar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +39,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        editar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final DeveloperBD developerBD = new DeveloperBD(getApplicationContext());
+                developerBD.editarCursos(numCuenta.getText().toString(),nombre.getText().toString(), carrera.getText().toString());
+                Toast.makeText(MainActivity.this, "SE MODIFICCO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+            }
+        });
+        eliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final DeveloperBD developerBD = new DeveloperBD(getApplicationContext());
+                if(numCuenta.getText().toString().equalsIgnoreCase("")){
+                    Toast.makeText(MainActivity.this, "NO HAY NINGUN ALUMNO SELECCIONADO", Toast.LENGTH_SHORT).show();
+                }else {
+                    developerBD.eliminarCursos(numCuenta.getText().toString());
+                    Toast.makeText(MainActivity.this, "SE HA ELIMINADO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                }
 
+            }
+        });
     }
 
     private void insertar(String numCuenta, String nombre, String carrera) {
