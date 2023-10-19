@@ -3,6 +3,7 @@ package com.example.ejemplosqlite;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,11 +15,13 @@ public class AlumnoAdaptador extends RecyclerView.Adapter<AlumnoAdaptador.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder
     {
         private TextView numCuenta, nombre, carrera;
+        private ImageView imagen;
         public ViewHolder(View itemView) {
             super(itemView);
             numCuenta = itemView.findViewById(R.id.numCuenta);
             nombre = itemView.findViewById(R.id.nombreI);
             carrera = itemView.findViewById(R.id.carreraI);
+            imagen = itemView.findViewById(R.id.fotoAlumno);
 
         }
     }
@@ -38,6 +41,7 @@ public class AlumnoAdaptador extends RecyclerView.Adapter<AlumnoAdaptador.ViewHo
         holder.numCuenta.setText(alumnoList.get(position).getNumCuenta());
         holder.nombre.setText(alumnoList.get(position).getNombre());
         holder.carrera.setText(alumnoList.get(position).getCarrera());
+        holder.imagen.setImageBitmap(alumnoList.get(position).getImagen());
 
     }
 
